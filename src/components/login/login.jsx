@@ -11,7 +11,7 @@ const Login = () => {
   return (
     <div className="home-container">
       <header className="home-header">
-        <h1>Welcome to the Attendance App</h1>
+        <h1>Login for Attendance App</h1>
         <p>Effortlessly manage and track attendance in one place.</p>
       </header>
 
@@ -48,7 +48,7 @@ const TeacherLoginForm = () => (
     <input type="password" placeholder="Password" required />
     <button type="submit">Login</button>
     <p className="account-message">
-      Already have an account? <a href="#signin">Sign In</a>
+      Don;t have an account? <a href="/register">Register here</a>
     </p>
   </form>
 );
@@ -62,7 +62,7 @@ const StudentLoginForm = () => (
     <input type="password" placeholder="Password" required />
     <button type="submit">Login</button>
     <p className="account-message">
-      Already have an account? <a href="#signin">Sign In</a>
+      Don't have an account? <a href="/register">Register here</a>
     </p>
   </form>
 );

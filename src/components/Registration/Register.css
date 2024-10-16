@@ -1,12 +1,12 @@
-/* Login.css */
+/* Register.css */
 
-.home-container {
+.register-container {
   padding: 2rem;
   max-width: 500px;
   margin: auto;
 }
 
-.home-header {
+.register-header {
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -34,19 +34,19 @@
   margin-top: 1.5rem;
 }
 
-.login-form {
+.register-form {
   display: flex;
   flex-direction: column;
 }
 
-.login-form input {
+.register-form input {
   margin-bottom: 1rem;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.login-form button {
+.register-form button {
   padding: 0.75rem;
   background-color: #3b5998;
   color: white;
@@ -55,7 +55,7 @@
   border-radius: 4px;
 }
 
-.login-form button:hover {
+.register-form button:hover {
   background-color: #2d4373;
 }
 

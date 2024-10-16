@@ -25,7 +25,7 @@ const Navbar = () => {
 
         {/* Navbar Links */}
         <div className={`navbar-links ${isOpen ? "active" : ""}`}>
-          <a href="#home" className="navbar-link">
+          <a href="/" className="navbar-link">
             Home
           </a>
           <a href="#about" className="navbar-link">
@@ -36,11 +36,7 @@ const Navbar = () => {
           </a>
 
           {/* Toggle between Signup and Signin */}
-          <a
-            href="#signup-signin"
-            className="navbar-link"
-            onClick={toggleSignupSignin}
-          >
+          <a href="/login" className="navbar-link" onClick={toggleSignupSignin}>
             {isSignedUp ? "Signin" : "Signup"}
           </a>
         </div>
