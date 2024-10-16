@@ -5,8 +5,7 @@ import Home from "./components/home/home";
 function App() {
   return (
     <>
-      <Nav />
-      <Home />
+     <h1>i am app.jsx</h1>
     </>
   );
 }
