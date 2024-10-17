@@ -101,7 +101,6 @@ const StudentRegisterForm = ({ handleImageChange, selectedImage }) => (
     <input type="email" placeholder="Email" required />
     <input type="password" placeholder="Password" required />
     <input type="password" placeholder="Confirm Password" required />
-
     {/* Image Upload */}
     <div className="image-upload">
       <label htmlFor="studentImage" className="upload-label">
@@ -130,3 +129,4 @@ const StudentRegisterForm = ({ handleImageChange, selectedImage }) => (
 );
 
 export default Register;
+
