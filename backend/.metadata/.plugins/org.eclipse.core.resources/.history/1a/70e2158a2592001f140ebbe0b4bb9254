@@ -1,0 +1,5 @@
+package com.attendance.myapp.controllers;
+
+public class StudentController {
+
+}

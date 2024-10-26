@@ -1,0 +1,5 @@
+package com.attendance.myapp.repositories;
+
+public interface StudentRepository {
+
+}

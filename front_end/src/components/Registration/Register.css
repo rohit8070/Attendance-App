@@ -1,0 +1,131 @@
+/* Register.css */
+
+/* Container and Header */
+.register-container {
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Toggle Container */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn.active {
+  background: #3b5998; /* Active color for selected role */
+  color: white;
+}
+
+/* Form Container */
+.form-container {
+  margin-top: 1.5rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form input {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button Styling */
+.register-form button {
+  padding: 0.75rem;
+  background-color: #3b5998;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.register-form button:hover {
+  background-color: #2d4373;
+}
+
+/* Account Message */
+.account-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Image Upload Styling */
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.image-upload label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.image-upload input[type="file"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.image-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 0.5rem;
+  border: 2px solid #3b5998;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 1.5rem;
+  }
+
+  .toggle-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .register-form input,
+  .register-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .image-preview {
+    width: 60px;
+    height: 60px;
+  }
+}
