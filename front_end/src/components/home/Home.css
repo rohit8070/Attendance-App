@@ -1,190 +1,186 @@
 /* General Styles */
 .home-container {
-    font-family: 'Arial', sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%; /* Ensure full width */
-  }
-  
-  /* Hero Section */
+  font-family: "Arial", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%; /* Ensure full width */
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 10%;
+  background: linear-gradient(135deg, #f9f9f9, #e9e9e9);
+  min-height: 90vh;
+  text-align: left;
+  width: 100%; /* Make sure it spans full width */
+  max-width: 1600px; /* Allow larger screens to display content better */
+  margin: 0 auto;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.join-us-btn {
+  padding: 1rem 2rem;
+  background-color: #3b5998;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+  padding: 3rem 10%;
+  background-color: #f4f4f4;
+  max-width: 1600px; /* For larger screens */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.why-choose-us h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.feature-item {
+  flex: 1;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* What is Our App */
+.what-is-app {
+  padding: 3rem 10%;
+  background: linear-gradient(135deg, #fff, #f9f9f9);
+  max-width: 1600px; /* Ensure this too fits large screens */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.what-is-app h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.app-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Call to Action */
+.call-to-action {
+  padding: 4rem 10%;
+  background-color: #3b5998;
+  color: white;
+  text-align: center;
+  max-width: 1600px; /* Ensuring full width for large screens */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.call-to-action h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.call-to-action .join-us-btn {
+  background-color: white;
+  color: #3b5998;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.call-to-action .join-us-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .hero-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4rem 10%;
-    background: linear-gradient(135deg, #f9f9f9, #e9e9e9);
-    min-height: 90vh;
-    text-align: left;
-    width: 100%; /* Make sure it spans full width */
-    max-width: 1600px; /* Allow larger screens to display content better */
-    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
   }
-  
+
   .hero-content {
-    flex: 1;
+    max-width: 100%;
   }
-  
-  .hero-content h1 {
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 1.5rem;
-  }
-  
-  .join-us-btn {
-    padding: 1rem 2rem;
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .join-us-btn:hover {
-    background-color: #ff3f30;
-  }
-  
+
   .hero-image img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
+    max-width: 100%;
   }
-  
-  /* Why Choose Us */
-  .why-choose-us {
-    padding: 3rem 10%;
-    background-color: #f4f4f4;
-    max-width: 1600px; /* For larger screens */
-    margin: 0 auto;
-    width: 100%;
-  }
-  
-  .why-choose-us h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }
-  
+
   .feature-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    flex-direction: column;
   }
-  
+
   .feature-item {
-    flex: 1;
-    text-align: center;
-    background: #fff;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .feature-item img {
-    width: 100px;
-    margin-bottom: 1rem;
-  }
-  
-  .feature-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .feature-item p {
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  /* What is Our App */
-  .what-is-app {
-    padding: 3rem 10%;
-    background: linear-gradient(135deg, #fff, #f9f9f9);
-    max-width: 1600px; /* Ensure this too fits large screens */
-    margin: 0 auto;
     width: 100%;
-  }
-  
-  .what-is-app h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .app-description {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  /* Call to Action */
-  .call-to-action {
-    padding: 4rem 10%;
-    background-color: #ff6f61;
-    color: white;
-    text-align: center;
-    max-width: 1600px; /* Ensuring full width for large screens */
-    margin: 0 auto;
-    width: 100%;
-  }
-  
-  .call-to-action h2 {
-    font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
-  
-  .call-to-action .join-us-btn {
-    background-color: white;
-    color: #ff6f61;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+
+  .what-is-app .app-description {
+    font-size: 1rem;
   }
-  
-  .call-to-action .join-us-btn:hover {
-    background-color: #f0f0f0;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero-section {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .hero-content {
-      max-width: 100%;
-    }
-  
-    .hero-image img {
-      max-width: 100%;
-    }
-  
-    .feature-grid {
-      flex-direction: column;
-    }
-  
-    .feature-item {
-      width: 100%;
-      margin-bottom: 1.5rem;
-    }
-  
-    .what-is-app .app-description {
-      font-size: 1rem;
-    }
-  }
-  
+}

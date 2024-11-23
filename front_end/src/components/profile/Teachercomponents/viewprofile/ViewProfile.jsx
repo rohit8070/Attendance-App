@@ -2,7 +2,7 @@ import React from "react";
 import "./ViewProfile.css";
 
 const ViewProfile = ({ loginData }) => {
-  console.log("Login data:", loginData);
+  // console.log("Login data:", loginData);
   const teacherData = {
     name: loginData.fullName,
     email: loginData.email,

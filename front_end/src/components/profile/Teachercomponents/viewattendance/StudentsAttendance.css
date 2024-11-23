@@ -1,0 +1,69 @@
+.students-attendance-container {
+  margin-top: 20px;
+  background-color: #ffffff; /* Changed to white for better contrast */
+  padding: 20px; /* Increased padding for a more spacious feel */
+  border-radius: 10px; /* Slightly larger border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+}
+
+.students-attendance-container h3 {
+  margin: 0 0 15px; /* Increased margin below the heading */
+  font-size: 1.8rem; /* Increased font size for the heading */
+  color: #333; /* Darker text for better readability */
+  text-align: center; /* Centered heading */
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center; /* Center action buttons */
+  gap: 15px; /* Increased gap for more spacing between buttons */
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #007bff; /* Primary button color */
+  color: white;
+  border: none;
+  padding: 12px 20px; /* Increased padding for larger buttons */
+  border-radius: 5px; /* Slightly larger border radius */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  font-size: 1rem; /* Increased font size */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.students-list {
+  margin-top: 20px;
+}
+
+.student-card {
+  background-color: #f9f9f9; /* Light grey background for student cards */
+  padding: 15px; /* Increased padding for better spacing */
+  border-radius: 5px; /* Slightly larger border radius */
+  margin: 15px 0; /* Increased margin for better separation */
+  border: 1px solid #e0e0e0; /* Added a subtle border for definition */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.student-card:hover {
+  background-color: #f1f1f1; /* Slightly darker background on hover */
+}
+
+.submit-button {
+  margin-top: 20px;
+  background-color: #28a745; /* Green color for submit button */
+  padding: 12px 20px; /* Increased padding */
+  font-size: 1rem; /* Consistent font size with other buttons */
+  border-radius: 5px; /* Consistent border radius */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.submit-button:hover {
+  background-color: #218838; /* Darker shade on hover */
+}

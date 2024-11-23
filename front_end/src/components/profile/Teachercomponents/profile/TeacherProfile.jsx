@@ -14,7 +14,7 @@ const TeacherProfile = () => {
   const [activeComponent, setActiveComponent] = useState(null);
   const location = useLocation();
   const loginData = location.state;
-  console.log(loginData);
+  // console.log(loginData);
 
   // Set sidebar visibility based on screen size on initial load
   useEffect(() => {

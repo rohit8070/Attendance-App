@@ -6,6 +6,7 @@ import Home from "./components/home/home";
 import Register from "./components/Registration/Register";
 import StudentProfile from "./components/profile/StudentProfile";
 import TeacherProfile from "./components/profile/Teachercomponents/profile/TeacherProfile";
+import AddClass from "./components/profile/Teachercomponents/manageclasses/AddClass";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/StudentProfile" element={<StudentProfile />} />
           <Route path="/TeacherProfile" element={<TeacherProfile />} />
+          <Route path="/TeacherProfile/addclass" element={<AddClass />} />
         </Routes>
       </BrowserRouter>
     </>

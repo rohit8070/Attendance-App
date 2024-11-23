@@ -32,8 +32,19 @@ public class Student {
 
     @Column(name = "course_id")
     private long course_id;
+    
+    @Column(name = "semester")
+    private int semester;
 
-    public long getStudent_id() {
+    public int getSemester() {
+		return semester;
+	}
+
+	public void setSemester(int semester) {
+		this.semester = semester;
+	}
+
+	public long getStudent_id() {
         return student_id;
     }
 
@@ -90,8 +101,9 @@ public class Student {
     }
 
     @Override
-    public String toString() {
-        return "Student [student_id=" + student_id + ", fullName=" + fullName + ", email=" + email + ", password="
-                + password + ", phoneNo=" + phoneNo + ", address=" + address + ", course_id=" + course_id + "]";
-    }
+	public String toString() {
+		return "Student [student_id=" + student_id + ", fullName=" + fullName + ", email=" + email + ", password="
+				+ password + ", phoneNo=" + phoneNo + ", address=" + address + ", course_id=" + course_id
+				+ ", semester=" + semester + "]";
+	}
 }

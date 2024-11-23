@@ -1,5 +1,7 @@
 package com.attendance.myapp.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,9 +12,13 @@ import com.attendance.myapp.services.StudentService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = { "http://localhost:5173", // Local frontend URL
+		"https://s7rl96t9-5173.inc1.devtunnels.ms/", // Tunnel URL
+		"http://192.168.41.48:5173" // Local IP-based URL for frontend
+})
 public class StudentController {
 
 	@Autowired
@@ -30,6 +36,17 @@ public class StudentController {
 		if (savedStudent != null) {
 			return "success";
 		}
+
 		return null;
 	}
+
+	@GetMapping("/teacher/students")
+	public List<String> fetchStudents(@RequestParam String course, @RequestParam String subject) {
+		List<String> students = studentService.fetchStudentByCourseIdAndSemester(course, subject);
+
+		System.out.println(course);
+		System.out.println(subject);
+		return students; // Return the list of students
+	}
+
 }
