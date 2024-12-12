@@ -4,10 +4,9 @@ import ViewProfile from "../viewprofile/ViewProfile";
 import ManageClasses from "../manageclasses/ManageClasses";
 import ViewAttendance from "../viewattendance/ViewAttendance";
 import GenerateReports from "../generatereports/GenerateReports";
+import Logout from "../LogOut/LogOut";
 import "./TeacherProfile.css";
 import { useLocation } from "react-router-dom";
-
-const Logout = () => <div>Logging Out...</div>;
 
 const TeacherProfile = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);

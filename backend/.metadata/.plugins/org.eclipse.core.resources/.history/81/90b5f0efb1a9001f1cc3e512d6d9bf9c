@@ -1,5 +1,0 @@
-package com.attendance.myapp.models;
-
-public class StudentAttendanceDTO {
-
-}

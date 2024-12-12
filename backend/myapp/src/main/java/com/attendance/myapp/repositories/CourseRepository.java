@@ -8,6 +8,7 @@ import com.attendance.myapp.models.Course;
 public interface CourseRepository extends JpaRepository<Course, Long> {
 	Course findByCourseName(String course_name);
 
+
 	@Query(value = "select course_id from courses where course_name = :course", nativeQuery = true)
 	int findCourseIdByCourseName(String course);
 }

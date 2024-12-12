@@ -48,7 +48,6 @@ public class AttendanceService {
 		} else {
 			return "All records already exist.";
 		}
-
 		return "All unique attendance records saved successfully";
 	}
 
@@ -64,6 +63,11 @@ public class AttendanceService {
 			dto.setAttendaceDate((java.sql.Date) result[3]); // Ensure correct type
 			return dto;
 		}).collect(Collectors.toList());
+	}
+
+	public List<Attendance> findBYStudentId(int studentId) {
+		
+		return attendanceRepository.findByStudentId(studentId);
 	}
 
 }

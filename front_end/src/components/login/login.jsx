@@ -26,20 +26,37 @@ const Login = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(loginDetails);
-    // Add axios call if required, similar to Register component
-    axios
-      .post("http://localhost:8080/login", loginDetails)
-      .then((Response) => {
-        setResponseMessage(Response.data);
-        // console.log(Response.data);
-        // console.log(responseMessage);
-        navigate("/TeacherProfile", { state: Response.data });
-      })
-      .catch((error) => {
-        console.error("Error sending data:", error);
-        setResponseMessage("Error sending data");
-      });
+    console.log(loginDetails);
+    if (userType === "Student") {
+      axios
+        .post("http://localhost:8080/student/login", loginDetails)
+        .then((Response) => {
+          setResponseMessage(Response.data);
+          console.log(Response.data);
+          if (Response.data) {
+            navigate("/StudentProfile", { state: Response.data });
+          } else {
+            alert("Wrong email and password");
+          }
+        })
+        .catch((error) => {
+          console.error("Error sending data:", error);
+          setResponseMessage("Error sending data");
+        });
+    } else {
+      axios
+        .post("http://localhost:8080/login", loginDetails)
+        .then((Response) => {
+          setResponseMessage(Response.data);
+          // console.log(Response.data);
+          // console.log(responseMessage);
+          navigate("/TeacherProfile", { state: Response.data });
+        })
+        .catch((error) => {
+          console.error("Error sending data:", error);
+          setResponseMessage("Error sending data");
+        });
+    }
   };
 
   return (

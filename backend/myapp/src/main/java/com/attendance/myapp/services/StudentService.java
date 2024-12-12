@@ -34,4 +34,14 @@ public class StudentService {
 		int semester = subjectRepository.findSemesterBySubjectName(subject);
 		return studentRepository.findStudentByCourseIdAndSemester(courseId, semester); 
 	}
+
+	public Student findByEmailAndPassword(String email, String password) {
+		// TODO Auto-generated method stub
+		return studentRepository.findByEmailAndPassword(email, password);
+	}
+
+	public List<String> subjectMapping(int courseId, int semester) {
+		// TODO Auto-generated method stub
+		return subjectRepository.subjectMapping(courseId, semester);
+	}
 }

@@ -1,184 +1,98 @@
-/* StudentProfile.css */
-
-.profile-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  font-family: Arial, sans-serif;
+.student-profile-wrapper {
+  display: flex;
+  min-height: 100vh;
 }
 
-.profile-header {
-  padding: 1rem 0;
-  border-bottom: 1px solid #eee;
-  position: relative;
-}
-
-.profile-pic {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  border: 3px solid #3b5998;
-}
-
-.profile-header h2 {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.profile-subtext {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.badge {
-  background-color: #4caf50;
+/* Sidebar */
+.student-sidebar {
+  width: 250px;
+  background-color: #3b5998; /* Green color for student profile */
   color: white;
-  font-size: 0.8rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 5px;
-  position: absolute;
-  top: 10px;
-  right: 15px;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  height: 100%;
+  transition: left 0.3s ease;
+  z-index: 1000;
 }
 
-.profile-info {
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem 0;
-  text-align: left;
+.student-sidebar.visible {
+  left: 0; /* Show when open */
 }
 
-.info-section {
-  width: 45%;
-}
-
-.info-section h3 {
-  color: #3b5998;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.info-section p {
-  color: #333;
-  font-size: 0.9rem;
-  margin: 0.3rem 0;
-}
-
-.attendance {
-  font-weight: bold;
-  margin-left: 5px;
-}
-
-.attendance.good {
-  color: #4caf50;
-}
-
-.attendance.poor {
-  color: #ff5722;
-}
-
-.performance-chart {
-  margin-top: 1rem;
-}
-
-.subject-bar {
-  margin-bottom: 0.8rem;
-}
-
-.subject-name {
-  font-weight: bold;
-  color: #333;
-}
-
-.score-bar {
-  height: 10px;
-  background-color: #3b5998;
-  border-radius: 5px;
-  transition: width 0.4s ease;
-  margin: 0.25rem;
-}
-
-.profile-footer {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1.5rem;
-}
-
-.update-btn,
-.logout-btn {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
+/* Close button for the sidebar */
+.sidebar-close-btn {
+  font-size: 24px;
   cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
 }
 
-.update-btn {
-  background-color: #3b5998;
-  color: #fff;
+/* Sidebar title and menu */
+.sidebar-title {
+  margin-bottom: 2rem;
+  color: white;
 }
 
-.logout-btn {
-  background-color: #ccc;
-  color: #333;
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
 }
 
-.update-btn:hover {
-  background-color: #2d4373;
+.sidebar-menu-item {
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
-.logout-btn:hover {
-  background-color: #999;
+.sidebar-menu-item:hover {
+  color: #ddd;
+}
+
+/* Main content styling */
+.student-profile-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 0; /* No margin to start with */
+  transition: margin-left 0.3s ease;
+}
+
+.student-profile-content {
+  margin-left: 250px; /* Ensure space for the sidebar */
+}
+
+/* Sidebar toggle button */
+.student-sidebar-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  position: fixed;
+  top: 15px; /* Position in the navbar area */
+  left: 20px; /* Position in the navbar area */
+  z-index: 1001;
+}
+
+/* Adjust when the sidebar is open */
+.student-sidebar.visible + .student-profile-content {
+  margin-left: 250px; /* Adjust content margin when sidebar is open */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .profile-info {
-    flex-direction: column;
+  .student-sidebar {
+    left: -250px; /* Hidden by default */
   }
 
-  .info-section {
-    width: 100%;
-    padding: 0.5rem 0;
+  .student-sidebar.visible {
+    left: 0; /* Show when open */
   }
 
-  .profile-container {
-    padding: 1rem;
-    max-width: 90%;
-  }
-
-  .profile-footer {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-header h2 {
-    font-size: 1.2rem;
-  }
-
-  .profile-subtext {
-    font-size: 0.8rem;
-  }
-
-  .info-section h3 {
-    font-size: 1rem;
-  }
-
-  .info-section p,
-  .update-btn,
-  .logout-btn {
-    font-size: 0.9rem;
-  }
-
-  .profile-pic {
-    width: 80px;
-    height: 80px;
+  .student-profile-content {
+    margin-left: 0; /* No margin on small screens */
   }
 }

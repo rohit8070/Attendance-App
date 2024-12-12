@@ -1,77 +1,115 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ViewStudentProfile from "../profile/StudnentComponents/ViewStudentProfile/ViewStudentProfile";
+import ViewAttendance from "../profile/StudnentComponents/ViewAttendance/ViewAttendance";
+import ViewReports from "../profile/StudnentComponents/viewReports/ViewReports";
+import Logout from "./StudnentComponents/LogOut/LogOut";
 import "./StudentProfile.css";
+import { useLocation } from "react-router-dom";
 
 const StudentProfile = () => {
-  // Sample student data for demonstration
-  const student = {
-    name: "John Doe",
-    rollNumber: "12345",
-    email: "john.doe@example.com",
-    course: "Computer Science",
-    year: "2nd Year",
-    attendance: "95%",
-    profilePic: "https://via.placeholder.com/150", // Replace with actual image URL
-    performance: [
-      { subject: "Math", score: 90 },
-      { subject: "Physics", score: 88 },
-      { subject: "Chemistry", score: 92 },
-    ],
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [activeComponent, setActiveComponent] = useState(null);
+  const location = useLocation();
+  const loginData = location.state;
+  console.log(loginData);
+
+  // Set sidebar visibility based on screen size on initial load
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      setIsSidebarVisible(true); // Open sidebar for large screens
+    } else {
+      setIsSidebarVisible(false); // Close sidebar for small screens
+    }
+
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsSidebarVisible(true);
+      } else {
+        setIsSidebarVisible(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleSidebarToggle = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
+
+  const handleMenuItemClick = (component) => {
+    setActiveComponent(component);
+
+    // Close sidebar only on mobile screens
+    if (window.innerWidth < 768) {
+      setIsSidebarVisible(false);
+    }
+  };
+
+  const renderActiveComponent = () => {
+    switch (activeComponent) {
+      case "ViewStudentProfile":
+        return <ViewStudentProfile loginData={loginData} />;
+      case "ViewAttendance":
+        return <ViewAttendance loginData={loginData} />;
+      case "ViewReports":
+        return <ViewReports loginData={loginData} />;
+      case "Logout":
+        return <Logout />;
+      default:
+        return <ViewStudentProfile loginData={loginData} />;
+    }
   };
 
   return (
-    <div className="profile-container">
-      <header className="profile-header">
-        <img src={student.profilePic} alt="Profile" className="profile-pic" />
-        <h2>{student.name}</h2>
-        <p className="profile-subtext">
-          {student.course} - {student.year}
-        </p>
-        <div className="badge">Active Student</div>
-      </header>
+    <div className="student-profile-wrapper">
+      {/* Sidebar */}
+      <aside className={`student-sidebar ${isSidebarVisible ? "visible" : ""}`}>
+        <button className="sidebar-close-btn" onClick={handleSidebarToggle}>
+          ✖ {/* Close Button in the top right */}
+        </button>
+        <h2 className="sidebar-title">Student Dashboard</h2>
+        <ul className="sidebar-menu">
+          <li
+            className="sidebar-menu-item"
+            onClick={() => handleMenuItemClick("ViewStudentProfile")}
+          >
+            View Profile
+          </li>
+          <li
+            className="sidebar-menu-item"
+            onClick={() => handleMenuItemClick("ViewAttendance")}
+          >
+            View Attendance
+          </li>
+          <li
+            className="sidebar-menu-item"
+            onClick={() => handleMenuItemClick("ViewReports")}
+          >
+            View Reports
+          </li>
+          <li
+            className="sidebar-menu-item"
+            onClick={() => handleMenuItemClick("Logout")}
+          >
+            Logout
+          </li>
+        </ul>
+      </aside>
 
-      <div className="profile-info">
-        <div className="info-section">
-          <h3>Student Details</h3>
-          <p>
-            <strong>Roll Number:</strong> {student.rollNumber}
-          </p>
-          <p>
-            <strong>Email:</strong> {student.email}
-          </p>
-          <p>
-            <strong>Overall Attendance:</strong>
-            <span
-              className={`attendance ${
-                student.attendance >= "75%" ? "good" : "poor"
-              }`}
-            >
-              {student.attendance}
-            </span>
-          </p>
-        </div>
-
-        <div className="info-section">
-          <h3>Performance Summary</h3>
-          <div className="performance-chart">
-            {student.performance.map((subject, index) => (
-              <div key={index} className="subject-bar">
-                <p className="subject-name">{subject.subject}</p>
-                <div
-                //   className="score-bar"
-                //   style={{ width: `${subject.score}%` }}
-                >
-                  {subject.score}%
-                </div>
-              </div>
-            ))}
+      {/* Main Content */}
+      <main className="student-profile-content">
+        {/* Sidebar Toggle Button (conditionally rendered) */}
+        {!isSidebarVisible && (
+          <div className="student-sidebar-toggle" onClick={handleSidebarToggle}>
+            ☰ {/* Hamburger Icon to open sidebar */}
           </div>
-        </div>
-      </div>
+        )}
 
-      <footer className="profile-footer">
-        <button className="update-btn">Update Profile</button>
-        <button className="logout-btn">Logout</button>
-      </footer>
+        {renderActiveComponent()}
+      </main>
     </div>
   );
 };

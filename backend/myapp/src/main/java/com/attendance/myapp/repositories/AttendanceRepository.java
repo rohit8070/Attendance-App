@@ -27,4 +27,6 @@ public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
 			@Param("subjectId") Long subjectId, @Param("teacherId") int teacherId,
 			@Param("startDate") java.sql.Date startDate, @Param("endDate") java.sql.Date endDate);
 
+	List<Attendance> findByStudentId(int studentId);
+
 }
